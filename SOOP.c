@@ -270,3 +270,15 @@ int main(void) {
 
         draw_room(cat_rc, scratcher_set, sp, tower_set, tp);
 
+        while (1) {
+            printf("\n상점에서 물건을 살 수 있습니다. 어떤 물건을 구매할까요?\n");
+            printf("현재 CP: %d\n", cp);
+            printf("0. 아무것도 사지 않는다.\n");
+            printf("1. 장난감 쥐: 1 CP%s\n", toy ? " (품절)" : "");
+            printf("2. 레이저 포인터: 2 CP%s\n", laser ? " (품절)" : "");
+            printf("3. 스크래처: 4 CP%s\n", so ? " (품절)" : "");
+            printf("4. 캣 타워: 6 CP%s\n", tower ? " (품절)" : "");
+            printf(">> ");
+
+            int c;
+            scanf_s("%d", &c);
