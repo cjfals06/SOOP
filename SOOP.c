@@ -45,3 +45,9 @@ void draw_room(Position cat, int has_scratcher, Position scratcher, int has_towe
     }
 }
 
+Position random_position() {
+    Position p;
+    p.x = rand() % (ROOM_WIDTH - 2) + 1;
+    p.y = rand() % (ROOM_HEIGHT - 2) + 1;
+    return p;
+}
