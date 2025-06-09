@@ -282,3 +282,21 @@ int main(void) {
 
             int c;
             scanf_s("%d", &c);
+
+            if (c == 0) break;
+            if (c < 0 || c > 4) {
+                printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+                continue;
+            }
+
+            if (c == 1 && !toy && cp >= 1) {
+                toy = 1; cp -= 1;
+                printf("장난감 쥐를 구매했습니다. (보유 CP %d 포인트)\n", cp);
+                break;
+            }
+            else if (c == 2 && !laser && cp >= 2) {
+                laser = 1; cp -= 2;
+                printf("레이저 포인터를 구매했습니다. (보유 CP %d 포인트)\n", cp);
+                break;
+            }
+            
