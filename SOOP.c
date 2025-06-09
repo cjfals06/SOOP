@@ -52,6 +52,32 @@ Position random_position() {
     return p;
 }
 
+void sudden_quest(int* cp, int* soup, int* m, const char* name) {
+    int cor = rand() % 3 + 1;
+    int g;
+    printf("\n?? 돌발 퀘스트 발생!! ??\n");
+    printf("쥐가 수프를 들고 도망갑니다! ????\n");
+    printf("3개의 쥐구멍 중 어디에 숨었을까요?\n");
+    printf("1번 / 2번 / 3번 중 선택하세요 >> ");
+    scanf_s("%d", &g);
+
+    if (g == cor) {
+        int bonus = rand() % 4 + 1;
+        printf("정답입니다! 보상으로 쥐가 여태 훔친 재산을 드릴게요!\n");
+        printf("두구두구.......     수프 +%d, CP +50 획득!\n", bonus);
+        *cp += 50;
+        *soup += bonus;
+    }
+    else {
+        printf("틀렸습니다...!\n");
+        printf("쥐: ㅋㅋ 그것도 못맞추네  니 수프 맛있다~\n");
+        if (*m > 0) {
+            printf("%s의 기분이 나빠졌습니다....: %d -> %d\n", name, *m, *m - 1);
+            (*m)--;
+        }
+    }
+}
+
 int main(void) {
     srand((unsigned int)time(NULL));
     char h[100];
@@ -269,6 +295,8 @@ int main(void) {
         prev_pos = cat_rc.x;
 
         draw_room(cat_rc, scratcher_set, sp, tower_set, tp);
+
+
 
         while (1) {
             printf("\n상점에서 물건을 살 수 있습니다. 어떤 물건을 구매할까요?\n");
