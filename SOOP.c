@@ -59,3 +59,6 @@ int main(void) {
     printf("야옹이의 이름을 지어주세요: ");
     scanf_s("%s", h, sizeof(h));
     printf("야옹이의 이름은 %s입니다.", h);
+
+    Sleep(2500);
+    system("cls");
