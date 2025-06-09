@@ -176,3 +176,12 @@ int main(void) {
         int cp_a = (m > 0 ? m - 1 : 0) + u;
         cp += cp_a;
         printf("\n%s의 기분과 친밀도에 따라 CP %d 포인트가 생산되었습니다. 현재 CP: %d\n", h, cp_a, cp);
+
+        if (so && !scratcher_set) {
+            sp = random_position();
+            scratcher_set = 1;
+        }
+        if (tower && !tower_set) {
+            tp = random_position();
+            tower_set = 1;
+        }
