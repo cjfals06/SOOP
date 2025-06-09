@@ -135,3 +135,40 @@ int main(void) {
             printf("%d. 레이저 포인터로 놀아 주기\n", op);
             point = op++;
         }
+
+        printf(">> ");
+        scanf_s("%d", &sel);
+
+        if (sel == 0) {
+            if (m > 0) {
+                m--;
+                printf("%s의 기분이 나빠졌습니다: %d -> %d\n", h, m + 1, m);
+            }
+            if (d <= 5 && u > 0) {
+                u--;
+                printf("친밀도가 감소합니다: %d\n", u);
+            }
+        }
+        else if (sel == feed) {
+            printf("%s의 기분은 그대로입니다: %d\n", h, m);
+            if (d >= 5 && u < 4) {
+                u++;
+                printf("친밀도가 증가합니다: %d\n", u);
+            }
+        }
+        else if (sel == scratch) {
+            printf("장난감 쥐로 %s랑 놀아 주었습니다.\n", h);
+            if (m < 3) m++;
+            if (d >= 4 && u < 4) {
+                u++;
+                printf("친밀도가 증가합니다: %d\n", u);
+            }
+        }
+        else if (sel == point) {
+            printf("레이저 포인터로 %s랑 신나게 놀아 주었습니다.\n", h);
+            m += (m <= 1) ? 2 : (3 - m);
+            if (d >= 2 && u < 4) {
+                u++;
+                printf("친밀도가 증가합니다: %d\n", u);
+            }
+        }
