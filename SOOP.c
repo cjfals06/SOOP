@@ -1,9 +1,12 @@
-#include <stdio.h>	
+#include <stdio.h>
+#include <windows.h>
+#include <time.h>
+#include <stdlib.h>
 
-int main(void) {
+#define ROOM_WIDTH 15
+#define ROOM_HEIGHT 4
+#define HME_POS 1
+#define BWL_POS (ROOM_WIDTH - 2)
 
-	printf("hello world\n");
 
-	return 0;
-}
 
