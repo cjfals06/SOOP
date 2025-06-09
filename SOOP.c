@@ -105,3 +105,16 @@ int main(void) {
         printf("6 - %d = 주사위 눈이 %d이하이면 그냥 기분이 나빠집니다.\n", u, L);
         printf("주사위를 굴립니다. 또르르...\n");
         printf("%d(이)가 나왔습니다.\n", d);
+
+        if (d <= L) {
+            if (m > 0) {
+                printf("%s의 기분이 나빠집니다: %d -> %d\n", h, m, m - 1);
+                m--;
+            }
+            else {
+                printf("%s의 기분은 이미 최악입니다.\n", h);
+            }
+        }
+        else {
+            printf("%s의 기분은 변하지 않았습니다.\n", h);
+        }
