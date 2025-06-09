@@ -51,3 +51,11 @@ Position random_position() {
     p.y = rand() % (ROOM_HEIGHT - 2) + 1;
     return p;
 }
+
+int main(void) {
+    srand((unsigned int)time(NULL));
+    char h[100];
+    printf("****야옹이와 수프****\n");
+    printf("야옹이의 이름을 지어주세요: ");
+    scanf_s("%s", h, sizeof(h));
+    printf("야옹이의 이름은 %s입니다.", h);
