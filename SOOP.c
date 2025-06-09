@@ -8,5 +8,8 @@
 #define HME_POS 1
 #define BWL_POS (ROOM_WIDTH - 2)
 
-
+typedef struct {
+    int x;
+    int y;
+} Position;
 
