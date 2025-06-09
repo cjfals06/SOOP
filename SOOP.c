@@ -16,5 +16,32 @@ typedef struct {
 void draw_room(Position cat, int has_scratcher, Position scratcher, int has_tower, Position tower) {
     for (int y = 0; y < ROOM_HEIGHT; y++) {
         for (int x = 0; x < ROOM_WIDTH; x++) {
+            if (y == 0 || y == ROOM_HEIGHT - 1) {
+                printf("#");
+            }
+            else if (x == 0 || x == ROOM_WIDTH - 1) {
+                printf("#");
+            }
+            else if (cat.x == x && cat.y == y) {
+                printf("C");
+            }
+            else if (has_scratcher && scratcher.x == x && scratcher.y == y) {
+                printf("S");
+            }
+            else if (has_tower && tower.x == x && tower.y == y) {
+                printf("T");
+            }
+            else if (x == HME_POS && y == 1) {
+                printf("H");
+            }
+            else if (x == BWL_POS && y == 1) {
+                printf("B");
+            }
+            else {
+                printf(" ");
+            }
         }
+        printf("\n");
+    }
+}
 
