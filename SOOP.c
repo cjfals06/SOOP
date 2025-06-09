@@ -266,3 +266,7 @@ int main(void) {
             printf("%s(은)는 방을 돌아다니고 있습니다.\n", h);
         }
 
+        prev_pos = cat_rc.x;
+
+        draw_room(cat_rc, scratcher_set, sp, tower_set, tp);
+
