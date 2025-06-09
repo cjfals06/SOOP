@@ -299,7 +299,9 @@ int main(void) {
 
         draw_room(cat_rc, scratcher_set, sp, tower_set, tp);
 
-
+        if (turn_count % 3 == 0) {
+            sudden_quest(&cp, &y, &m, h);
+        }
 
         while (1) {
             printf("\n상점에서 물건을 살 수 있습니다. 어떤 물건을 구매할까요?\n");
