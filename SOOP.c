@@ -62,3 +62,17 @@ int main(void) {
 
     Sleep(2500);
     system("cls");
+
+    int y = 0;
+    int u = 2;
+    int m = 3;
+    int cp = 0;
+    int prev_pos = -1;
+    int toy = 0, laser = 0;
+    int so = 0, tower = 0;
+    int scratcher_set = 0;
+    int tower_set = 0;
+
+    Position cat_rc = { ROOM_WIDTH / 2, ROOM_HEIGHT / 2 };
+    Position sp = { -1, -1 };
+    Position tp = { -1, -1 };
