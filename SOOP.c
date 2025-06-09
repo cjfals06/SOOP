@@ -118,3 +118,7 @@ int main(void) {
         else {
             printf("%s의 기분은 변하지 않았습니다.\n", h);
         }
+
+        int sel;
+        int feed = 1, scratch = -1, point = -1;
+        int op = 2;
