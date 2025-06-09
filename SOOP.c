@@ -122,3 +122,16 @@ int main(void) {
         int sel;
         int feed = 1, scratch = -1, point = -1;
         int op = 2;
+
+        printf("\n어떤 상호작용을 하시겠습니까?\n");
+        printf("0. 아무것도 하지 않음\n");
+        printf("1. 긁어 주기\n");
+
+        if (toy) {
+            printf("%d. 장난감 쥐로 놀아 주기\n", op);
+            scratch = op++;
+        }
+        if (laser) {
+            printf("%d. 레이저 포인터로 놀아 주기\n", op);
+            point = op++;
+        }
