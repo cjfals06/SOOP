@@ -103,6 +103,8 @@ int main(void) {
     Position sp = { -1, -1 };
     Position tp = { -1, -1 };
 
+    int turn_count = 0;
+
     while (1) {
 
         printf("============== 현재 상태 ==============\n");
