@@ -217,3 +217,12 @@ int main(void) {
         else if (m == 3) {
             printf("%s(은)는 골골송을 부르며 수프를 만들러 갑니다.\n", h);
             target = &(Position) { BWL_POS, 1 };
+        }
+
+        if (target && !(cat_rc.x == target->x && cat_rc.y == target->y)) {
+            if (cat_rc.x < target->x) cat_rc.x++;
+            else if (cat_rc.x > target->x) cat_rc.x--;
+            else if (cat_rc.y < target->y) cat_rc.y++;
+            else if (cat_rc.y > target->y) cat_rc.y--;
+        }
+
