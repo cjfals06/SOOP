@@ -226,3 +226,43 @@ int main(void) {
             else if (cat_rc.y > target->y) cat_rc.y--;
         }
 
+        printf("\n행동\n");
+        int acted = 0;
+
+        if (cat_rc.x == HME_POS && cat_rc.y == 1) {
+            if (prev_pos == HME_POS) {
+                printf("%s(은)는 집에서 쉬고 있습니다. 기분이 좋아졌습니다!\n", h);
+                if (m < 3) { m++; printf("기분: %d -> %d\n", m - 1, m); }
+                acted = 1;
+            }
+            else {
+                printf("%s(은)는 이제 집에 도착했습니다.\n", h);
+            }
+        }
+        else if (cat_rc.x == BWL_POS && cat_rc.y == 1) {
+            printf("%s(은)는 수프를 만듭니다!\n", h);
+            const char* soups[] = { "감자", "양송이", "브로콜리" };
+            int soup_type = rand() % 3;
+            printf("%s(이)가 %s 수프를 만들었습니다!\n", h, soups[soup_type]);
+            y++;
+            acted = 1;
+        }
+        else if (so && cat_rc.y == sp.y) {
+            printf("%s(은)는 스크래처를 긁고 놀았습니다.\n", h);
+            if (m < 3) { m++; printf("기분이 조금 좋아졌습니다: %d -> %d\n", m - 1, m); }
+            acted = 1;
+        }
+        else if (tower && cat_rc.y == tp.y) {
+            printf("%s(은)는 캣타워를 뛰어다닙니다.\n", h);
+            if (m < 3) {
+                int gain = (m <= 1) ? 2 : (3 - m);
+                m += gain;
+                printf("기분이 제법 좋아졌습니다: %d -> %d\n", m - gain, m);
+            }
+            acted = 1;
+        }
+
+        if (!acted) {
+            printf("%s(은)는 방을 돌아다니고 있습니다.\n", h);
+        }
+
