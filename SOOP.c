@@ -13,3 +13,8 @@ typedef struct {
     int y;
 } Position;
 
+void draw_room(Position cat, int has_scratcher, Position scratcher, int has_tower, Position tower) {
+    for (int y = 0; y < ROOM_HEIGHT; y++) {
+        for (int x = 0; x < ROOM_WIDTH; x++) {
+        }
+
