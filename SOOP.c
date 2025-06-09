@@ -327,3 +327,10 @@ int main(void) {
                 printf("불가능 다시 선택해주세요.\n");
             }
         }
+
+        Sleep(1500);
+        system("cls");
+    }
+
+    return 0;
+}
