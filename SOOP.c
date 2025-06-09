@@ -185,3 +185,35 @@ int main(void) {
             tp = random_position();
             tower_set = 1;
         }
+
+        printf("\n이동\n");
+        Position* target = NULL;
+
+        if (m == 0) {
+            printf("기분이 매우 나쁜 %s(은)는 집으로 향합니다.\n", h);
+            target = &(Position) { HME_POS, 1 };
+        }
+        else if (m == 1) {
+            if (so || tower) {
+                Position* obj1 = so ? &sp : NULL;
+                Position* obj2 = tower ? &tp : NULL;
+                if (obj1 && !obj2) target = obj1;
+                else if (!obj1 && obj2) target = obj2;
+                else {
+                    int dist1 = abs(cat_rc.x - obj1->x) + abs(cat_rc.y - obj1->y);
+                    int dist2 = abs(cat_rc.x - obj2->x) + abs(cat_rc.y - obj2->y);
+                    target = (dist1 <= dist2) ? obj1 : obj2;
+                }
+                printf("%s(은)는 심심해서 놀이기구 쪽으로 이동합니다.\n", h);
+            }
+            else {
+                printf("놀 거리가 없어서 기분이 매우 나빠집니다...\n");
+                if (m > 0) m--;
+            }
+        }
+        else if (m == 2) {
+            printf("%s(은)는 기분좋게 식빵을 굽고 있습니다.\n", h);
+        }
+        else if (m == 3) {
+            printf("%s(은)는 골골송을 부르며 수프를 만들러 갑니다.\n", h);
+            target = &(Position) { BWL_POS, 1 };
