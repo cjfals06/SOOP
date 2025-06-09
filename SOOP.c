@@ -299,4 +299,31 @@ int main(void) {
                 printf("레이저 포인터를 구매했습니다. (보유 CP %d 포인트)\n", cp);
                 break;
             }
-            
+            else if (c == 3 && !so && cp >= 4) {
+                so = 1; cp -= 4;
+                do {
+                    sp = random_position();
+                } while (
+                    (sp.x == tp.x && sp.y == tp.y) ||
+                    (sp.x == HME_POS && sp.y == 1) ||
+                    (sp.x == BWL_POS && sp.y == 1));
+                scratcher_set = 1;
+                printf("스크래처를 구매했습니다. (보유 CP %d 포인트)\n", cp);
+                break;
+            }
+            else if (c == 4 && !tower && cp >= 6) {
+                tower = 1; cp -= 6;
+                do {
+                    tp = random_position();
+                } while (
+                    (tp.x == sp.x && tp.y == sp.y) ||
+                    (tp.x == HME_POS && tp.y == 1) ||
+                    (tp.x == BWL_POS && tp.y == 1));
+                tower_set = 1;
+                printf("캣 타워를 구매했습니다. (보유 CP %d 포인트)\n", cp);
+                break;
+            }
+            else {
+                printf("불가능 다시 선택해주세요.\n");
+            }
+        }
